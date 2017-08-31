@@ -1,0 +1,9 @@
+.search {
+}
+.search input {
+       color: gray;
+       margin: 2px;
+       font: inherit;
+       border-color: mediumorchid;
+       border-radius: 5px;
+}
