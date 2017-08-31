@@ -1,8 +1,9 @@
 import * as types from './types';
+import conf from '../conf'
 
  export function search(query) {
    return function (dispatch, getState) {
-     return fetch('http://api.tvmaze.com/search/shows?q=:'+ query + '/')
+     return fetch(conf.API + query + '/')
      .then(res => res.json())
      .then(shows => {
        dispatch({type: types.SEARCH_SHOW, search: shows});

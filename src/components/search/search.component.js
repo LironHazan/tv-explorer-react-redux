@@ -1,6 +1,5 @@
 import React, { Component, PropTypes } from 'react';
 import './search.css';
-//import SearchService from './search.service.js';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import * as searchActions from '../../actions/search.actions.js';
@@ -10,18 +9,16 @@ class Search extends Component {
 
   constructor(props) {
       super(props);
-      this.state = {value:''}
-
-      this.handleChange = this.handleChange.bind(this);
-      this.keyPress = this.keyPress.bind(this);
-     // this.searchService = new SearchService();
+      this.state = {searchKey: ''}
+      this.getShowText = this.getShowText.bind(this);
+      this.searchTvShow = this.searchTvShow.bind(this);
    }
 
-    handleChange(e) {
-      this.setState({ value: e.target.value });
+    getShowText(e) {
+      this.setState({searchKey: e.target.value });
     }
 
-  keyPress(e){
+  searchTvShow(e){
       if(e.keyCode === 13){
          if(e.target.value){
             this.props.searchTvShow(e.target.value);
@@ -32,7 +29,7 @@ class Search extends Component {
   render() {
     return (
       <div className="search">
-        <input type="text" value={this.state.value} onKeyDown={this.keyPress} onChange={this.handleChange} />
+        <input type="text" value={this.state.searchKey} onKeyDown={this.searchTvShow} onChange={this.getShowText} />
         <img src={logo} className="app-logo" alt="logo" />
       </div>
     );
@@ -56,5 +53,3 @@ function mapDispatchToProps(dispatch) {
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Search);
-
-//export default Search;
