@@ -1,13 +1,12 @@
 import React from 'react';
 import { Route, IndexRoute } from 'react-router';
 import App from './components/App';
-//import HomePage from './components/home/HomePage';
-//import CompaniesPage from './components/company/CompaniesPage';
+import ShowPage from './components/show-page/show-page.component.js'
+import ShowsPage from './components/shows-page/shows-page.component.js'
 
-   // <IndexRoute component={HomePage} />
-  //  <Route path="companies/:groupId" component={CompaniesPage} />
 export default (
   <Route path="/" component={App}>
-
+    <IndexRoute component={ShowsPage} />
+    <Route path="show" component={ShowPage} />
   </Route>
 );

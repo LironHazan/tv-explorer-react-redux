@@ -1,4 +1,4 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
 import './search.css';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
@@ -35,10 +35,6 @@ class Search extends Component {
     );
   }
 }
-
-Search.propTypes = {
- searchTvShow: PropTypes.object.isRequired,
-};
 
 function mapStateToProps(state, ownProps) {
   return {

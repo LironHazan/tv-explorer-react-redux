@@ -1,9 +1,13 @@
 .search {
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
 }
 .search input {
-       color: gray;
-       margin: 2px;
-       font: inherit;
-       border-color: mediumorchid;
-       border-radius: 5px;
+    color: gray;
+    font: inherit;
+    border-color: mediumorchid;
+    border-radius: 5px;
+    padding-left: 1em;
+    width: 18em;
 }

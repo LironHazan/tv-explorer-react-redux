@@ -1,0 +1,11 @@
+.shows {
+    height: 100%;
+}
+
+.shows-list {
+    padding-top: 3em;
+    display: flex;
+        flex-direction: column;
+        align-items: center;
+}
+

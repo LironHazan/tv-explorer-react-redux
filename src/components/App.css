@@ -1,5 +1,4 @@
 .app {
-  text-align: center;
   height:100%;
 }
 
@@ -9,12 +8,13 @@
 }
 
 .app-header {
-  background-color: beige;
+  background-color: lightgrey;
   padding: 30px;
   color: white;
 }
 .tv-shows-searcher {
     display: inline-flex;
+        width: 50%;
 }
 .shows-container {
   height:100% !important;

@@ -1,8 +1,8 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
 import logo from './assets/tv.png';
 import './App.css';
 import Search from './search/search.component.js';
-import ShowsContainer from './shows-container/shows-container.component.js';
+import ShowsPage from './shows-page/shows-page.component.js';
 import {connect} from 'react-redux';
 
 class App extends Component {
@@ -14,7 +14,7 @@ class App extends Component {
                 <Search></Search>
             </div>
         </div>
-       <ShowsContainer className="shows-container" shows={this.props.shows}></ShowsContainer>
+       <ShowsPage className="shows-container" shows={this.props.shows}></ShowsPage>
       </div>
     );
   }
@@ -25,9 +25,5 @@ function mapStateToProps(state, ownProps) {
     shows: state.search
   };
 }
-
-App.propTypes = {
-  shows: PropTypes.object.isRequired
-};
 
 export default connect(mapStateToProps)(App);
