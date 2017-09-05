@@ -7,7 +7,7 @@ import routes from './routes';
 import { Provider } from 'react-redux'
 import 'bootstrap/dist/css/bootstrap.css'
 
-const store = configureStore({shows: [],});
+const store = configureStore({});
 
 ReactDOM.render(
   <Provider className="full-height" store={store}>
