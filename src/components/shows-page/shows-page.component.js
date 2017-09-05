@@ -12,7 +12,7 @@ class ShowsPage extends Component {
         const name = item.show.name;
         const summary = item.show.summary || '';
         const image = item.show.image && item.show.image.medium ? item.show.image.medium : '';
-        return (<Show name={name} summary={summary} image={image}> </Show>);
+        return (<Show key={item.show.id} name={name} summary={summary} image={image}> </Show>);
       });
 
     return (

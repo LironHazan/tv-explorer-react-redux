@@ -18,7 +18,7 @@ class Show extends Component {
       <div className="list-item">
         <div className="show-name">{this.props.name}</div>
         <div className="show-content">
-            <div onClick={this.goToShow} className="show-image"> <img src={this.props.image}/> </div>
+            <div onClick={this.goToShow} className="show-image"> <img src={this.props.image} alt=""/> </div>
             <div className="show-summary" dangerouslySetInnerHTML={{ __html: this.props.summary }} />
        </div>
       </div>
