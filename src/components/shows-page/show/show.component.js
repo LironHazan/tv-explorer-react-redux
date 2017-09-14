@@ -1,26 +1,28 @@
 import React, { Component } from 'react';
-import {browserHistory} from 'react-router';
+import {Link as Link} from 'react-router-dom';
 
 import './show.css';
 
 class Show extends Component {
-  constructor(props) {
-      super(props);
-      this.onClick = this.goToShow.bind(this);
- }
+  constructor(props, context) {
+    super(props);
+    //this.onClick = this.goToShow.bind(this);
+  }
 
-   goToShow() {
-    browserHistory.push('/show');
-   }
+  goToShow() {
+    this.props.history.push("/show");
+  }
 
   render() {
     return (
       <div className="list-item">
-        <div className="show-name">{this.props.name}</div>
+        <Link to="/show" className="show-name">{this.props.name}</Link>
         <div className="show-content">
-            <div onClick={this.goToShow} className="show-image"> <img src={this.props.image} alt=""/> </div>
-            <div className="show-summary" dangerouslySetInnerHTML={{ __html: this.props.summary }} />
-       </div>
+          <div className="show-image">
+            <img src={this.props.image} alt=""/>
+          </div>
+          <div className="show-summary" dangerouslySetInnerHTML={{ __html: this.props.summary }} />
+        </div>
       </div>
     );
   }

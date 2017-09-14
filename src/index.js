@@ -2,8 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import configureStore from './store/configure-store';
-import { Router, Route, browserHistory, IndexRoute } from 'react-router';
-//import routes from './routes';
+import { Router, Route } from 'react-router-dom'
+import createBrowserHistory from 'history/createBrowserHistory';
 import { Provider } from 'react-redux'
 import 'bootstrap/dist/css/bootstrap.css'
 
@@ -14,14 +14,12 @@ import ShowsPage from './components/shows-page/shows-page.component.js'
 const store = configureStore({});
 
 ReactDOM.render(
-  <Provider className="full-height" store={store}>
-    <Router history={browserHistory}>
-
-  <Route path="/" component={App}>
-    <IndexRoute component={ShowsPage} />
-    <Route path="show" component={ShowPage} />
-  </Route>
-
+ <Provider className="full-height" store={store}>
+   <Router history={createBrowserHistory()}>
+    <div>
+        <Route exact path="/" component={App}/>
+        <Route path="/show" component={ShowPage}/>
+    </div>
   </Router>
-  </Provider>,
+ </Provider>,
 document.getElementById('root'));
