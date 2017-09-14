@@ -1,11 +1,11 @@
 .list-item {
-        transition: box-shadow 150ms linear;
-        box-shadow: 0 5px 8px rgba(0,0,0,.28);
-        background-color: lightgrey;
-        padding: 3em;
-        width: 90%;
-        border-radius: 3px;
-        margin-bottom: 1em;
+    transition: box-shadow 150ms linear;
+    box-shadow: 0 5px 8px rgba(0,0,0,.28);
+    background-color: lightgrey;
+    padding: 3em;
+    width: 90%;
+    border-radius: 3px;
+    margin-bottom: 1em;
 }
 
 .list-item.show-name {
@@ -14,16 +14,12 @@
     cursor: pointer;
 }
 .list-item.show-content {
-   display: inline-flex;
+    display: inline-flex;
 }
 
-.list-item.show-content.show-image {
-    img {
 
-    }
-   }
 .list-item.show-content.show-summary {
     width: 55%;
     font-weight: 300
-    }
+}
 

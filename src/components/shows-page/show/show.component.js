@@ -4,19 +4,19 @@ import {Link as Link} from 'react-router-dom';
 import './show.css';
 
 class Show extends Component {
-  constructor(props, context) {
+  constructor(props) {
     super(props);
-    //this.onClick = this.goToShow.bind(this);
+    this.getShowData = this.getShowData.bind(this);
   }
 
-  goToShow() {
-    this.props.history.push("/show");
+  getShowData() {
+    //todo: dispatch store show details
+    console.log('hereeeee show')
   }
-
   render() {
     return (
       <div className="list-item">
-        <Link to="/show" className="show-name">{this.props.name}</Link>
+        <Link to="/show" className="show-name" onClick={this.getShowData}>{this.props.name}</Link>
         <div className="show-content">
           <div className="show-image">
             <img src={this.props.image} alt=""/>

@@ -3,19 +3,18 @@ import './show-page.css';
 
 class ShowPage extends Component {
   constructor(props) {
-      super(props);
- }
+    super(props);
+  }
 
   render() {
     return (
-      <div className="show">
+      <div className="show-info">
         <div className="show-info-section">
-            <div> section info component</div>
+          <div> section info component: pics, cast, story etc..</div>
         </div>
-                <div className="show-youtube-section">
-                    <div> youtube component</div>
-                </div>
-
+        <div className="show-info-section">
+          <div> youtube component - relevant videos</div>
+        </div>
       </div>
     );
   }

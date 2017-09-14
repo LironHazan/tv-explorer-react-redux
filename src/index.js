@@ -9,7 +9,6 @@ import 'bootstrap/dist/css/bootstrap.css'
 
 import App from './components/App';
 import ShowPage from './components/show-page/show-page.component.js'
-import ShowsPage from './components/shows-page/shows-page.component.js'
 
 const store = configureStore({});
 
