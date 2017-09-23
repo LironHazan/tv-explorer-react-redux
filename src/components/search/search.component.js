@@ -9,7 +9,7 @@ class Search extends Component {
 
   constructor(props) {
       super(props);
-      this.state = {searchKey: ''}
+      this.state = {searchKey: ''};
       this.getShowText = this.getShowText.bind(this);
       this.searchTvShow = this.searchTvShow.bind(this);
    }

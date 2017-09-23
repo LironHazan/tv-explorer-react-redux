@@ -6,17 +6,12 @@ import './show.css';
 class Show extends Component {
   constructor(props) {
     super(props);
-    this.getShowData = this.getShowData.bind(this);
   }
 
-  getShowData() {
-    //todo: dispatch store show details
-    console.log('hereeeee show')
-  }
   render() {
     return (
       <div className="list-item">
-        <Link to="/show" className="show-name" onClick={this.getShowData}>{this.props.name}</Link>
+        <Link to={`/show/${this.props.showid}`} className="show-name" onClick={this.setShowData}>{this.props.name}</Link>
         <div className="show-content">
           <div className="show-image">
             <img src={this.props.image} alt=""/>
@@ -27,4 +22,5 @@ class Show extends Component {
     );
   }
 }
+
 export default Show;

@@ -17,7 +17,7 @@ ReactDOM.render(
    <Router history={createBrowserHistory()}>
     <div>
         <Route exact path="/" component={App}/>
-        <Route path="/show" component={ShowPage}/>
+        <Route path="/show/:showid" to="/" component={ShowPage}/>
     </div>
   </Router>
  </Provider>,
