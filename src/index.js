@@ -22,3 +22,5 @@ ReactDOM.render(
   </Router>
  </Provider>,
 document.getElementById('root'));
+
+// lifecycle hooks reference: https://engineering.musefind.com/react-lifecycle-methods-how-and-when-to-use-them-2111a1b692b1

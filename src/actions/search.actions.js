@@ -13,3 +13,36 @@ import conf from '../conf'
      });
    };
  }
+
+ export function searchCast(id) {
+  return fetch(conf.API + 'shows/' + id + '/cast')
+    .then(res => res.json())
+    .then(cast => {
+      return cast;
+    })
+    .catch(err => {
+      throw(err);
+    });
+}
+
+ export function searchShow(id) {
+  return fetch(conf.API + 'shows/' + id)
+    .then(res => res.json())
+    .then(show => {
+      return show;
+    })
+    .catch(err => {
+      throw(err);
+    });
+}
+
+ export function searchVideos(query) {
+  return fetch(conf.YT_API + '?q=$'+ query + '&part=snippet&key=' + conf.YT_API)
+    .then(res => res.json())
+    .then(show => {
+      return show;
+    })
+    .catch(err => {
+      throw(err);
+    });
+}
