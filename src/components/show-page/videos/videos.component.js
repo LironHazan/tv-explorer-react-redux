@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import * as searchAction from '../../../actions/search.actions';
-//import './show-page.css';
+import conf from '../../../conf.js'
+
+//import './videos.css';
 
 class Videos extends Component {
   constructor(props) {
@@ -11,7 +13,7 @@ class Videos extends Component {
   componentDidMount() {
     return searchAction.searchVideos(this.props.name)
       .then((videos) => {
-        this.setState({videos});
+        this.setState({videos: videos.items});
       })
       .catch(err => {console.log(err)});
   }
@@ -19,10 +21,18 @@ class Videos extends Component {
   render() {
     let videos;
     if(this.state.videos.length > 0) {
-      videos = this.props.cast.map((item) => {
-        return (<div key={item.id}>
-          {item}
-        </div>);
+      videos = this.state.videos.reduce((acc, value) => {
+          if(value.id.videoId && (acc.indexOf(value.id.videoId) === -1)){
+            acc.push(value.id.videoId);
+          }
+          return acc;
+      }, []);
+
+      videos = videos.map((id) => {
+        return (
+         <div key={id}>
+            <iframe width="400" height="300" src={conf.YT_DOMAIN + '/' + id} frameBorder="0" allowFullScreen> </iframe>
+         </div>);
       });
     }
     return (

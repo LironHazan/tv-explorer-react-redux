@@ -37,7 +37,7 @@ import conf from '../conf'
 }
 
  export function searchVideos(query) {
-  return fetch(conf.YT_API + '?q=$'+ query + '&part=snippet&key=' + conf.YT_API)
+  return fetch(conf.YT_API_DOMAIN + '?q=$'+ query + '&part=snippet&key=' + conf.YT_KEY)
     .then(res => res.json())
     .then(show => {
       return show;
