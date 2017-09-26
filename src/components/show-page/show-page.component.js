@@ -43,8 +43,7 @@ class ShowPage extends Component {
           </div>
         </div>
         <div className="show-info-section">
-          <div> youtube component - relevant videos</div>
-          <Video name={name}> </Video>
+          <Video vname={name}> </Video>
         </div>
       </div>
     );

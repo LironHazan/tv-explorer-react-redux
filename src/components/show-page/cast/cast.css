@@ -1,0 +1,6 @@
+.cast-member img {
+    height: 8em;
+}
+.cast-list {
+    display: inline-flex;
+}

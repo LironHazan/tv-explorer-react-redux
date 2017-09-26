@@ -1,17 +1,20 @@
 import React, { Component } from 'react';
 import * as searchAction from '../../../actions/search.actions';
 import conf from '../../../conf.js'
-
-//import './videos.css';
+import './videos.css';
 
 class Videos extends Component {
   constructor(props) {
     super(props);
-    this.state = {videos: []};
+    this.state = {videos: [], vname: this.props.vname};
   }
 
+  // shouldComponentUpdate(nextProps){
+  //   return this.props.vname !== nextProps.vname;
+  // }
+
   componentDidMount() {
-    return searchAction.searchVideos(this.props.name)
+    return searchAction.searchVideos(this.state.vname)
       .then((videos) => {
         this.setState({videos: videos.items});
       })

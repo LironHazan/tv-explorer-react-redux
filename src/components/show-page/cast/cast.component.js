@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-//import './cast.css';
+import './cast.css';
 
 class Cast extends Component {
   constructor(props) {
@@ -13,13 +13,14 @@ render() {
     cast = this.props.cast.map((item) => {
       const name = item.person.name;
       const image = item.person.image ? item.person.image.medium || item.person.image.original : null;
-      return(<div key={item.person.id}> {name}
+      return(<div key={item.person.id} className="cast-member">
+              {name}
               <img src={image} alt=""/>
             </div>);
     });
   }
   return (
-    <div>{cast}</div>
+    <div className="cast-list">{cast}</div>
   );
 }
 }

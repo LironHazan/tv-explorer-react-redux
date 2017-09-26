@@ -23,3 +23,6 @@
     font-weight: 300
 }
 
+.show-image img {
+    height: 15em;
+}
