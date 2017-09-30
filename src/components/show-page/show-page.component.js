@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import * as searchAction from '../../actions/search.actions';
 import Show from '../shows-page/show/show.component';
 import Cast from './cast/cast.component';
-import Video from './videos/videos.component';
+import Videos from './videos/videos.component';
 
 import './show-page.css';
 
@@ -43,7 +43,7 @@ class ShowPage extends Component {
           </div>
         </div>
         <div className="show-info-section">
-          <Video vname={name}> </Video>
+          <Videos vname={this.state.name}> </Videos>
         </div>
       </div>
     );
