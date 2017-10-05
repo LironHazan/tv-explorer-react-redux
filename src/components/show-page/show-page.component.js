@@ -9,7 +9,7 @@ import './show-page.css';
 class ShowPage extends Component {
   constructor(props) {
     super(props);
-    this.state = {cast: [], show: {}};
+    this.state = {cast: [], show: {}, videos: []};
   }
 
   componentDidMount() {
@@ -22,7 +22,11 @@ class ShowPage extends Component {
         return searchAction.searchShow(_id)
       })
       .then((show) => {
-          this.setState({cast: _cast, show});
+        this.setState({cast: _cast, show});
+        return searchAction.searchVideos(this.state.show.name)
+      })
+      .then((videos) => {
+        this.setState({videos: videos.items});
       })
       .catch(err => {console.log(err)});
   }
@@ -43,7 +47,7 @@ class ShowPage extends Component {
           </div>
         </div>
         <div className="show-info-section">
-          <Videos vname={this.state.name}> </Videos>
+          <Videos videos={this.state.videos}> </Videos>
         </div>
       </div>
     );

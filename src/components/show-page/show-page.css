@@ -7,8 +7,6 @@
 .show-info-section {
     width: 50%;
     padding: 3em;
-    background-color: palegoldenrod;
-    border: 1px solid lightslategray;
 }
 .list-item {
     transition: none;
