@@ -6,7 +6,7 @@ import './videos.css';
 class Videos extends Component {
   constructor(props) {
     super(props);
-    this.state = {showModal: false};
+    this.state = {showModal: false, index: 0};
     this.close = this.close.bind(this);
     this.open = this.open.bind(this);
   }
@@ -15,9 +15,8 @@ class Videos extends Component {
     this.setState({ showModal: false });
   }
 
-  open(i) {
-    this.setState({ showModal: true });
-    console.log(i);
+  open(id) {
+    this.setState({ showModal: true, id });
   }
 
   render() {
@@ -30,11 +29,11 @@ class Videos extends Component {
           return acc;
       }, []);
 
-      videos = videos.map((id, index) => {
+      videos = videos.map((id) => {
         return (
-         <div key={id} onClick={this.open}>
-            <iframe title={id} width="400" height="300" src={conf.YT_DOMAIN + '/' + id} frameBorder="0" allowFullScreen> </iframe>
-            <span> Click Here!</span>
+         <div key={id} onClick={() => this.open(id)}>
+           <span className="glyphicon glyphicon-expand" aria-hidden="true"></span>
+           <iframe title={id} width="400" height="300" src={conf.YT_DOMAIN + '/' + id} frameBorder="0" allowFullScreen> </iframe>
          </div>);
       });
     }
@@ -42,13 +41,12 @@ class Videos extends Component {
    <div>
       <Modal show={this.state.showModal} onHide={this.close}>
       <Modal.Header closeButton>
-        <Modal.Title>Modal title</Modal.Title>
+        <Modal.Title> </Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        {/*<iframe title={id} width="400" height="300" src={conf.YT_DOMAIN + '/' + id} frameBorder="0" allowFullScreen> </iframe>*/}
+        <iframe title={this.state.id} width="400" height="300" src={conf.YT_DOMAIN + '/' + this.state.id} frameBorder="0" allowFullScreen> </iframe>
       </Modal.Body>
       <Modal.Footer>
-        footer - will i need it?
       </Modal.Footer>
     </Modal>
       {videos}

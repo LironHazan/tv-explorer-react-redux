@@ -14,7 +14,7 @@ render() {
       const name = item.person.name;
       const image = item.person.image ? item.person.image.medium || item.person.image.original : null;
       return(<div key={item.person.id} className="cast-member">
-              {name}
+              <div> {name} </div>
               <img src={image} alt=""/>
             </div>);
     });

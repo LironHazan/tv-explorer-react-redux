@@ -2,5 +2,6 @@
     height: 8em;
 }
 .cast-list {
-    display: inline-flex;
+    display: flex;
+    flex-direction: column;
 }

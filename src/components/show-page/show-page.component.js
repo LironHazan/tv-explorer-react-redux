@@ -39,17 +39,17 @@ class ShowPage extends Component {
     const image = _show && _show.image && _show.image.medium ? _show.image.medium : '';
 
     return (
-      <div className="show-info">
-        <div className="show-info-section">
-          <div>
-            <Show name={name} summary={summary} image={image}> </Show>
-            <Cast cast={this.state.cast}> </Cast>
+        <div className="show-info">
+          <div className="show-info-section">
+            <div>
+              <Show name={name} summary={summary} image={image}> </Show>
+              <Cast cast={this.state.cast}> </Cast>
+            </div>
+          </div>
+          <div className="show-info-section">
+            <Videos videos={this.state.videos}> </Videos>
           </div>
         </div>
-        <div className="show-info-section">
-          <Videos videos={this.state.videos}> </Videos>
-        </div>
-      </div>
     );
   }
 }
