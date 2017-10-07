@@ -24,16 +24,19 @@ class Videos extends Component {
     if(this.props.videos.length > 0) {
       videos = this.props.videos.reduce((acc, value) => {
           if(value.id.videoId && (acc.indexOf(value.id.videoId) === -1)){
-            acc.push(value.id.videoId);
+            acc.push({id: value.id.videoId,
+              img: value.snippet.thumbnails.default.url});
           }
           return acc;
       }, []);
 
-      videos = videos.map((id) => {
+      videos = videos.map((video) => {
         return (
-         <div key={id} onClick={() => this.open(id)}>
-           <span className="glyphicon glyphicon-expand" aria-hidden="true"></span>
-           <iframe title={id} width="400" height="300" src={conf.YT_DOMAIN + '/' + id} frameBorder="0" allowFullScreen> </iframe>
+         <div key={video.id} onClick={() => this.open(video.id)}>
+           <div className="vido-image">
+             <img className="song-img" src={video.img}/>
+             <span className="play-icon"><span className="glyphicon glyphicon-play"></span></span>
+           </div>
          </div>);
       });
     }

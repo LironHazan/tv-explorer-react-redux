@@ -14,3 +14,19 @@
     background-color: transparent;
     border-radius: 0;
 }
+.vido-image {
+    position: relative;
+}
+.song-img {
+    padding-top: 1em;
+}
+.play-icon {
+    position: absolute;
+    top: 5rem;
+    left: 5rem;
+    color: red;
+    background-color: white;
+    border-radius: 6px;
+    padding: 0.3rem;
+    cursor: pointer;
+}
