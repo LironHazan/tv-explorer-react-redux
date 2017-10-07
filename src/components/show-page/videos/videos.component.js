@@ -25,7 +25,9 @@ class Videos extends Component {
       videos = this.props.videos.reduce((acc, value) => {
           if(value.id.videoId && (acc.indexOf(value.id.videoId) === -1)){
             acc.push({id: value.id.videoId,
-              img: value.snippet.thumbnails.default.url});
+              img: value.snippet.thumbnails.default.url,
+              description: value.snippet.channelTitle
+            });
           }
           return acc;
       }, []);
@@ -33,6 +35,7 @@ class Videos extends Component {
       videos = videos.map((video) => {
         return (
          <div key={video.id} onClick={() => this.open(video.id)}>
+           <div> {video.description} </div>
            <div className="vido-image">
              <img className="song-img" src={video.img}/>
              <span className="play-icon"><span className="glyphicon glyphicon-play"></span></span>
